@@ -16,6 +16,8 @@ let count = 0;
 let continents = [];
 let countries = [];
 
+displayCountries();
+
 /* Events */
 window.addEventListener('load', async () => {
     // > Part A: call findCountries (with no arguments)
