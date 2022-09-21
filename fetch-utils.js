@@ -11,10 +11,12 @@ export async function getCountries(name, continent) {
 
     if (name) {
         // > Part C: add query for name
+        query = query.ilike('name', `%${name}%`);
     }
     
     if (continent) {
         // > Part C: add query for continent
+        query = query.eq('continent', continent);
     }
 
     const response = await query;
@@ -23,8 +25,6 @@ export async function getCountries(name, continent) {
 }
 
 export async function getContinents() {
-    // > Part B: await client query from country_continents
     const response = await client.from('country_continents').select();
-    // (select all columns) and return response
     return response;
 }
